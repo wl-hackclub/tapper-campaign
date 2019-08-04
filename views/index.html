@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+
+    <link rel="stylesheet" href="/style.css">
+    
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <script src="/client.js"></script>
+    <h1 id="global_count">
+      Current global count: 0
+    </h1>
+    <h2 id="local_count">
+      Current local count:
+    </h2>
+    <button type="submit" id="submit-dream" onclick="incrementCount()">Increment count</button>
+  </body>
+</html>
