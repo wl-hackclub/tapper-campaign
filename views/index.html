@@ -1,47 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Tap the mysterious red blob 👀</title>
+    <meta
+      name="description"
+      content="A cool new marketing campaign for Hack Club"
+    />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Ftransparent-shapes-red.png?v=1565192914793"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
 
-<head>
-  <title>Tap the mysterious red blob 👀</title>
-  <meta name="description" content="A cool new marketing campaign for Hack Club">
-  <link id="favicon" rel="icon"
-    href="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Ftransparent-shapes-red.png?v=1565192914793"
-    type="image/x-icon">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="/style.css" />
 
-  <link rel="stylesheet" href="/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
 
-  <script src="/socket.io/socket.io.js"></script>
-</head>
+  <body>
+    <script src="/client.js"></script>
+    <h1 id="global_count">
+      Schoolwide tap count:
+    </h1>
+    <h2 id="local_count">
+      Personal tap count:
+    </h2>
+    <img
+      id="blob"
+      src="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Ftransparent-shapes-red.png?v=1565192914793"
+      onclick="incrementCount()"
+    />
 
-<body>
-  <script src="/client.js"></script>
-  <h1 id="global_count">
-    Schoolwide tap count:
-  </h1>
-  <h2 id="local_count">
-    Personal tap count:
-  </h2>
-  <img id="blob"
-    src="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Ftransparent-shapes-red.png?v=1565192914793"
-    onclick="incrementCount()">
-
-  <div id="winnerModal" class="winnerModal">
-    <div id="winnerModalContent" class="winnerModalContent">
-      <h1>
-        Congratulations! You won!
-      </h1>
-      <p style="margin-top: 25px;">
-        We need to be able to contact you to give you your prize. Please enter your email or phone number.
-      </p>
-      <form action="/submission" method="post" id="emailform">
-        <input type="text" id="email" placeholder="Enter email or phone number" autofocus>
-        <button type="submit" form="emailform">Submit</button>
-      </form>
+    <div id="winnerModal" class="winnerModal">
+      <div id="winnerModalContent" class="winnerModalContent">
+        <h1>
+          Congratulations! You won!
+        </h1>
+        <p style="margin-top: 25px;">
+          We need to be able to contact you to give you your prize. Please enter
+          your email or phone number.
+        </p>
+        <form
+          action="/submission"
+          onsubmit="return checkEmpty()"
+          method="post"
+          id="emailform"
+        >
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Enter email or phone number"
+            autofocus
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

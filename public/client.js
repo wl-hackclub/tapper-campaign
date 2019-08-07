@@ -25,3 +25,8 @@ function updateCounts(globalCount) {
   document.getElementById('local_count').innerHTML = `Personal tap count: ${localStorage.tap_count}`
   document.getElementById('global_count').innerHTML = `Schoolwide tap count: ${globalCount}`
 }
+
+function checkEmpty() {
+  if (document.getElementById('email').value === '')
+    return false
+}

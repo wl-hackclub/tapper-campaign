@@ -42,7 +42,7 @@ app.post('/submission', (req, res) => {
   })
 })
 
-io.on('connection', (socket) => {
+io.on('connection', socket => {
   console.log('a user connected')
   socket.emit('updateCounts', store.get('globalCount'))
 
@@ -54,8 +54,7 @@ io.on('connection', (socket) => {
     store.put('globalCount', store.get('globalCount') + 1)
     console.log(store.get('globalCount'))
 
-    if (store.get('globalCount') === 1000)
-      socket.emit('winner')
+    if (store.get('globalCount') === 1000) socket.emit('winner')
   })
 })
 
