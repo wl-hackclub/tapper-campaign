@@ -10,14 +10,18 @@ socket.on('updateCounts', (globalCount) => {
   updateCounts(globalCount)
 })
 
+socket.on('winner', () => {
+  document.getElementById('winnerModal').style.display = "block"
+})
+
 function incrementCount() {
   socket.emit('incrementGlobalCount')
 
   localStorage.tap_count++
-  document.getElementById('local_count').innerHTML = `Current local count: ${localStorage.tap_count}`
+  document.getElementById('local_count').innerHTML = `Personal tap count: ${localStorage.tap_count}`
 }
 
 function updateCounts(globalCount) {
-  document.getElementById('local_count').innerHTML = `Current local count: ${localStorage.tap_count}`
-  document.getElementById('global_count').innerHTML = `Current global count: ${globalCount}`
+  document.getElementById('local_count').innerHTML = `Personal tap count: ${localStorage.tap_count}`
+  document.getElementById('global_count').innerHTML = `Schoolwide tap count: ${globalCount}`
 }
