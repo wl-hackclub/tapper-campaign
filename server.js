@@ -52,7 +52,7 @@ io.on('connection', socket => {
 
   socket.on('incrementGlobalCount', () => {
     store.put('globalCount', store.get('globalCount') + 1)
-    console.log(store.get('globalCount'))
+    //console.log(store.get('globalCount'))
 
     if (store.get('globalCount') === 1000) socket.emit('winner')
   })
