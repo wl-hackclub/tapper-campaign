@@ -18,8 +18,9 @@
 
 <body>
   <script src="/client.js"></script>
+  <a href="https://hackclub.com" target="_blank"><img class="banner" src="https://hackclub.com/banners/2019.svg"></a>
 
-  <h1 id="global_count">
+  <h1 id="global_count" class="globalCount" style="margin-bottom: -20px;">
     Schoolwide tap count:
   </h1>
   <h2 id="local_count">
@@ -28,6 +29,21 @@
   <img id="blob"
     src="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fred-blob.svg?v=1565211452106https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fred-blob.svg?v=1565211428059"
     onclick="incrementCount()">
+
+  <div id="info" class="info">
+    <h1 style="margin-bottom: 50px;">
+      Prizes: <span style="font-size: 24px; color: #696969;">A $20 Amazon gift card at 1000 taps<br>A Google Home Mini
+        at 4000 taps<br>Another thing at 10,000 taps</span>
+    </h1>
+    <h2 style="margin-bottom: -10px;">
+      Instructions:
+    </h2>
+    <p id="infoParagraph" class="infoParagraph">
+      Tap on the mysterious red blob as quickly as you can. Every time
+      the schoolwide tap count reaches a milestone, the person who tapped
+      that number gets a free prize.
+    </p>
+  </div>
 
   <div id="winnerModal" class="winnerModal">
     <div id="emojis"></div>

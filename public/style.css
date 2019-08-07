@@ -3,15 +3,15 @@
 }
 
 body {
-  font-family: "system-ui", "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: system-ui, "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   touch-action: none;
   margin: 2em;
+  font-variant-numeric: tabular-nums;
 }
 
 h1 {
   color: #DB3847;
   text-align: center;
-  margin-bottom: -20px;
 }
 
 h2 {
@@ -22,6 +22,10 @@ h2 {
 p {
   max-width: 600px;
   text-align: center;
+}
+
+span {
+  letter-spacing: -0.02em;
 }
 
 form {
@@ -42,7 +46,7 @@ button {
 
 input {
   display: block;
-  webkit-appearance: none;
+  -webkit-appearance: none;
   border: 1px solid #696969;
   margin-bottom: 10px;
   padding: 5px;
@@ -72,6 +76,23 @@ input {
   width: 50%;
 }
 
+.info {
+  margin-top: 125px;
+  text-align: center;
+}
+
+.infoParagraph {
+  display: inline-block;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 20%;
+}
+
 img {
   display: block;
   margin-left: auto;
@@ -93,5 +114,13 @@ img:active {
   
   .winnerModalContent {
     width: 80%;
+  }
+  
+  .banner {
+    width: 40%;
+  }
+  
+  .globalCount {
+    padding-top: 75px;
   }
 }
