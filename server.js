@@ -42,7 +42,7 @@ app.post('/submission', (req, res) => {
   })
 })
 
-io.on('connection', socket => {
+io.on('connection', (socket) => {
   console.log('a user connected')
   socket.emit('updateCounts', store.get('globalCount'))
 
@@ -54,7 +54,19 @@ io.on('connection', socket => {
     store.put('globalCount', store.get('globalCount') + 1)
     //console.log(store.get('globalCount'))
 
-    if (store.get('globalCount') === 1000) socket.emit('winner')
+    switch (store.get('globalCount')) {
+      case 2230:
+        socket.emit('winner', 'a $20 Amazon gift card')
+        break;
+      case 2235:
+        socket.emit('winner', 'a Google Home Mini')
+        break;
+      case 2240:
+        socket.emit('winner', 'an exclusive GitHub plushie')
+        break;
+      default:
+        break;
+    }
   })
 })
 
