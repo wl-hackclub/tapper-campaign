@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: "system-ui", "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   touch-action: none;
   margin: 2em;
 }
@@ -42,6 +42,7 @@ button {
 
 input {
   display: block;
+  webkit-appearance: none;
   border: 1px solid #696969;
   margin-bottom: 10px;
   padding: 5px;
