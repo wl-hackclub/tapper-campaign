@@ -1,17 +1,45 @@
 const express = require('express')
 const app = express()
+var bodyParser = require('body-parser')
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
 const Storage = require('node-storage')
 const cron = require('node-cron')
+const nodemailer = require('nodemailer')
 
 const store = new Storage('globalCount.json')
 //store.put('globalCount', 0)
 
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
+})
+
+app.post('/submission', (req, res) => {
+  console.log(`received email ${req.body.email}`)
+
+  var transporter = nodemailer.createTransport({
+    service: `gmail`,
+    auth: {
+      user: `mattbstanciu@gmail.com`,
+      pass: process.env.GMAIL_PASS
+    }
+  })
+
+  var mailOptions = {
+    from: `mattbstanciu@gmail.com`,
+    to: `mattbstanciu@gmail.com`,
+    subject: `SOMEBODY WON`,
+    text: `${req.body.email} WON A PRIZE!!!`
+  }
+  transporter.sendMail(mailOptions, (err, data) => {
+    if (err) return console.log(err)
+    console.log(`Email sent: ${data.response}`)
+    return res.redirect('/')
+  })
 })
 
 io.on('connection', (socket) => {
@@ -26,7 +54,7 @@ io.on('connection', (socket) => {
     store.put('globalCount', store.get('globalCount') + 1)
     console.log(store.get('globalCount'))
 
-    if (store.get('globalCount') === 616)
+    if (store.get('globalCount') === 1000)
       socket.emit('winner')
   })
 })

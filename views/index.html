@@ -33,11 +33,12 @@
       <h1>
         Congratulations! You won!
       </h1>
-      <p>
+      <p style="margin-top: 25px;">
         We need to be able to contact you to give you your prize. Please enter your email or phone number.
       </p>
-      <form action="/submission" method="post" id="f" class="f">
-        <input type="text" placeholder="Enter email or phone number" autofocus>
+      <form action="/submission" method="post" id="emailform">
+        <input type="text" id="email" placeholder="Enter email or phone number" autofocus>
+        <button type="submit" form="emailform">Submit</button>
       </form>
     </div>
   </div>
