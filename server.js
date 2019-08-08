@@ -7,10 +7,11 @@ const Storage = require('node-storage')
 const cron = require('node-cron')
 const nodemailer = require('nodemailer')
 const Airtable = require('airtable')
+
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appy4tKao5f5Pelcv')
 
 const store = new Storage('globalCount.json')
-//store.put('globalCount', 0)
+// store.put('globalCount', 0)
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -34,7 +35,7 @@ app.post('/submission', (req, res) => {
     from: `mattbstanciu@gmail.com`,
     to: `mattbstanciu@gmail.com`,
     subject: `SOMEBODY WON`,
-    text: `${req.body.email} WON A PRIZE!!!`
+    text: `${req.body.email} WON A PRIZE!!! At the time, the global count was ${store.get('globalCount')}`
   }
 
   transporter.sendMail(mailOptions, (err, data) => {
@@ -45,16 +46,15 @@ app.post('/submission', (req, res) => {
 })
 
 app.post('/signup', (req, res) => {
-  base('Table 1').create({
-    "Phone number": req.body.tel
-  }, (err, record) => {
-    if (err) {
-      console.error(err)
-      return
+  base('Table 1').create({ 'Phone number': req.body.tel },
+    (err, record) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+      console.log(`New phone number added! ${record.getId()}`)
     }
-    console.log(`New phone number added! ${record.getId()}`)
-    return res.redirect('/')
-  })
+  )
 })
 
 io.on('connection', socket => {
@@ -67,11 +67,11 @@ io.on('connection', socket => {
 
   socket.on('incrementGlobalCount', () => {
     store.put('globalCount', store.get('globalCount') + 1)
-    //console.log(store.get('globalCount'))
+    // console.log(store.get('globalCount'))
 
     switch (store.get('globalCount')) {
       case 1000:
-        socket.emit('winner', 'a 10,500mAh portable charger')
+        socket.emit('winner', 'a 10,400mAh portable charger')
         break
       case 4000:
         socket.emit('winner', 'a $25 Amazon gift card')
