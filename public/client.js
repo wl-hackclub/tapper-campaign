@@ -12,10 +12,10 @@ socket.on('updateCounts', (globalCount) => {
 
 socket.on('winner', (prize) => {
   document.getElementById('winnerModal').style.display = "block"
-  
+
   var prizeText = document.getElementById('prize')
   prizeText.innerHTML = ` ${prize}`
-  
+
   makeItRain()
 })
 
@@ -28,7 +28,7 @@ function incrementCount() {
 
 function updateCounts(globalCount) {
   document.getElementById('local_count').innerHTML = `Personal tap count: ${localStorage.tap_count}`
-  document.getElementById('global_count').innerHTML = `Schoolwide tap count: <span>${globalCount}</span>`
+  document.getElementById('global_count').innerHTML = `School-wide tap count: <span>${globalCount}</span>`
 }
 
 function checkEmpty() {
