@@ -1,3 +1,4 @@
 package-lock.json
 .node-gyp
 globalCount.json
+.env
