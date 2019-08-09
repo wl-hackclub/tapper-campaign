@@ -56,6 +56,8 @@ app.post('/signup', (req, res) => {
       console.log(`New phone number added! ${record.getId()}`)
     }
   )
+
+  return res.redirect('/')
 })
 
 io.on('connection', socket => {
