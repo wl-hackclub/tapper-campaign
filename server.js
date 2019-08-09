@@ -71,7 +71,7 @@ io.on('connection', socket => {
     // console.log(store.get('globalCount'))
 
     switch (store.get('globalCount')) {
-      case 1000:
+      case 1452:
         socket.emit('winner', 'a 10,400mAh portable charger')
         break
       case 4000:
