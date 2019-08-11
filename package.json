@@ -1,10 +1,7 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "name": "tap-the-blob",
+  "version": "1.0",
+  "description": "Tap the mysterious red blob, win free prizes! A new marketing campaign for WLHS Hack Club",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -23,12 +20,7 @@
     "node": "8.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "url": "https://github.com/wl-hackclub/tapper-campaign"
   },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+  "license": "MIT"
 }
