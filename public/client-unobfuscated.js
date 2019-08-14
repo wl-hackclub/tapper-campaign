@@ -34,7 +34,7 @@ function updateCounts(globalCount) {
   ).innerHTML = `Personal tap count: ${localStorage.tap_count}`
   document.getElementById(
     'globalCount'
-  ).innerHTML = `School-wide tap count: <span>${globalCount}</span>`
+  ).innerHTML = `Taps: <span>${globalCount}</span>`
 }
 
 function checkEmpty() {

@@ -284,8 +284,13 @@ mark {
     align-items: center;
   }
   .globalCount {
-    font-size: 3rem;
+    font-size: 4rem;
     color: white;
+  }
+  .url {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 4rem;
   }
   .localCount {
     display: none;
