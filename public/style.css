@@ -237,6 +237,12 @@ mark {
   color: inherit;
 }
 
+@media (max-width: 32em) {
+  .hackclub {
+    display: none;
+  }
+}
+
 @media (min-width: 32em) {
   .hc,
   .hc-inner {
