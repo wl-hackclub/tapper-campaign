@@ -279,6 +279,9 @@ mark {
   }
   body {
     background-image: linear-gradient(to right, rgb(228, 115, 45), 25%, rgb(228,45,66) 50%, rgb(228, 45, 158));
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
   }
   .globalCount {
     font-size: 3rem;
