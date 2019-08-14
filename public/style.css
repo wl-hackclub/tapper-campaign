@@ -118,6 +118,9 @@ img:active {
   .globalCount {
     padding-top: 75px;
   }
+  .hc-inner {
+    transform: scale(1.125);
+  }
 }
 
 .hc-inner {
@@ -139,7 +142,6 @@ img:active {
     url('https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fwindy_3.jpeg?v=1565237405644');
   background-size: cover;
   background-postion: center center;
-  transform: scale(1.125);
 }
 
 .hc-container {
@@ -235,6 +237,12 @@ mark {
   .hackclub {
     display: none;
   }
+  .link {
+    display: none;
+  }
+  .globalCount {
+    display: none;
+  }
 }
 
 @media (min-width: 32em) {
@@ -253,6 +261,9 @@ mark {
   }
   .hackclub {
     display: none;
+  }
+  .localCount {
+    padding-top: 100px;
   }
 }
 
