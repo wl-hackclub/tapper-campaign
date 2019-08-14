@@ -277,6 +277,12 @@ mark {
   }
 }
 
+@media (max-width: 48em) {
+  .hc {
+    margin-bottom: 3rem;
+  }
+}
+
 @media (min-width: 64em) {
   .hc {
     padding: 4rem;
