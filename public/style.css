@@ -271,17 +271,19 @@ mark {
   }
   .hackclub {
     display: block;
-    background-image: linear-gradient(to right, rgb(228, 115, 45), 25%, rgb(228,45,66) 50%, rgb(228, 45, 158));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
     font-size: 12rem;
     margin-top: 2rem;
   }
   .blob {
     display: none;
   }
+  body {
+    background-image: linear-gradient(to right, rgb(228, 115, 45), 25%, rgb(228,45,66) 50%, rgb(228, 45, 158));
+  }
   .globalCount {
     font-size: 3rem;
+    color: white;
   }
   .localCount {
     display: none;
