@@ -1,6 +1,6 @@
 {
   "name": "tap-the-blob",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Tap the mysterious red blob, win free prizes! A new marketing campaign for WLHS Hack Club",
   "main": "server.js",
   "scripts": {
