@@ -23,15 +23,15 @@ function incrementCount() {
   socket.emit('incrementGlobalCount')
 
   localStorage.tap_count++
-  document.getElementById(
-    'localCount'
-  ).innerHTML = `Personal tap count: ${localStorage.tap_count}`
+  document.getElementById('localCount').innerHTML = `Personal tap count: ${
+    localStorage.tap_count
+  }`
 }
 
 function updateCounts(globalCount) {
-  document.getElementById(
-    'localCount'
-  ).innerHTML = `Personal tap count: ${localStorage.tap_count}`
+  document.getElementById('localCount').innerHTML = `Personal tap count: ${
+    localStorage.tap_count
+  }`
   document.getElementById(
     'globalCount'
   ).innerHTML = `Taps: <span>${globalCount}</span>`

@@ -1,117 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Tap the mysterious red blob 👀</title>
+    <meta
+      name="description"
+      content="A cool new marketing campaign for West Lafayette Hack Club"
+    />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Ftransparent-shapes-red.png?v=1565192914793"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,700,800"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
 
-<head>
-  <title>Tap the mysterious red blob 👀</title>
-  <meta name="description" content="A cool new marketing campaign for West Lafayette Hack Club" />
-  <link id="favicon" rel="icon"
-    href="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Ftransparent-shapes-red.png?v=1565192914793"
-    type="image/x-icon" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css" />
+    <meta name="author" content="Matthew Stanciu" />
+    <meta name="theme-color" content="#EC3737" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Tap the Blob" />
+    <meta
+      name="twitter:description"
+      content="Tap the mysterious red blob, win free prizes 👀"
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fsocial-card.png?v=1565235349940"
+    />
+    <meta property="og:site_name" content="Tap the Blob" />
+    <meta property="og:title" content="Tap the Blob" />
+    <meta property="og:url" content="https://taptheblob.com" />
+    <meta
+      property="og:description"
+      content="Tap the mysterious red blob, win free prizes 👀"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fsocial-card.png?v=1565235349940"
+    />
 
-  <meta name="author" content="Matthew Stanciu" />
-  <meta name="theme-color" content="#EC3737" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tap the Blob" />
-  <meta name="twitter:description" content="Tap the mysterious red blob, win free prizes 👀" />
-  <meta name="twitter:image"
-    content="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fsocial-card.png?v=1565235349940" />
-  <meta property="og:site_name" content="Tap the Blob" />
-  <meta property="og:title" content="Tap the Blob" />
-  <meta property="og:url" content="https://taptheblob.com" />
-  <meta property="og:description" content="Tap the mysterious red blob, win free prizes 👀" />
-  <meta property="og:image"
-    content="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fsocial-card.png?v=1565235349940" />
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
 
-  <script src="/socket.io/socket.io.js"></script>
-</head>
+  <body>
+    <div class="blobContent">
+      <script src="/client.js"></script>
+      <a href="https://hackclub.com" target="_blank"
+        ><img class="banner" src="https://hackclub.com/banners/2019.svg"
+      /></a>
 
-<body>
-  <div class="blobContent">
-    <script src="/client.js"></script>
-    <a href="https://hackclub.com" target="_blank"><img class="banner"
-        src="https://hackclub.com/banners/2019.svg" /></a>
+      <h1 class="hackclub">
+        Hack Club
+      </h1>
+      <h1 class="link">taptheblob.com</h1>
+      <h1 id="globalCount" class="globalCount">
+        Taps:
+      </h1>
+      <h2 id="localCount" class="localCount">
+        Personal tap count:
+      </h2>
+      <img
+        id="blob"
+        class="blob"
+        src="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fbetter-blob.svg?v=1565231820054"
+        onclick="incrementCount()"
+      />
+    </div>
 
-    <h1 class="hackclub">
-      Hack Club
-    </h1>
-    <h1 class="link">taptheblob.com</h1>
-    <h1 id="globalCount" class="globalCount">
-      Taps:
-    </h1>
-    <h2 id="localCount" class="localCount">
-      Personal tap count:
-    </h2>
-    <img id="blob" class="blob"
-      src="https://cdn.glitch.com/a7c7e97e-66a8-4b5a-b211-604e9ee5ce31%2Fbetter-blob.svg?v=1565231820054"
-      onclick="incrementCount()" />
-  </div>
+    <div id="info" class="info">
+      <h2>
+        Instructions
+      </h2>
+      <p id="infoParagraph" class="infoParagraph">
+        Tap on the mysterious red blob as quickly as you can. If the school-wide
+        tap count reaches 5,000 before the club rush ends, the 5,000th click
+        gets a 10,400mAh portable charger.
+      </p>
+    </div>
 
-  <div id="info" class="info">
-    <h2>
-      Instructions
-    </h2>
-    <p id="infoParagraph" class="infoParagraph">
-      Tap on the mysterious red blob as quickly as you can. If the school-wide tap count reaches
-      5,000 before the club rush ends, the 5,000th click gets a 10,400mAh portable charger.
-    </p>
-  </div>
+    <section class="hc">
+      <div class="hc-inner">
+        <div class="hc-container">
+          <h2>We are <span>Hack Club</span>.</h2>
+          <p>
+            We’re a club at WLHS that teaches you to code through tinkering &
+            building projects.
+          </p>
+          <p>
+            <mark>Come to our first meeting</mark> next week & leave with your
+            first website online.
+          </p>
+          <form action="/signup" method="post">
+            <label>
+              Get an SMS reminder
+              <input type="tel" name="tel" placeholder="765-555-5555" />
+            </label>
+            <button type="submit">
+              Sign up
+            </button>
+          </form>
+          <p class="small">
+            Wed, August 21, room 2234 (Mr. Cullen) @ 3:30pm.
+            Snacks&nbsp;included!
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section class="hc">
-    <div class="hc-inner">
-      <div class="hc-container">
-        <h2>We are <span>Hack Club</span>.</h2>
-        <p>
-          We’re a club at WLHS that teaches you to code through tinkering &
-          building projects.
+    <div id="winnerModal" class="winnerModal">
+      <div id="emojis"></div>
+      <div id="winnerModalContent" class="winnerModalContent">
+        <h1 id="winnerHeading">
+          Congratulations! You won<span id="prize"></span>!
+        </h1>
+        <p style="margin-top: 25px;">
+          We need to be able to contact you to give you your prize. Please enter
+          your email or phone number. (school email is okay if you feel
+          uncomfortable giving out other personal info—just make sure you check
+          it!)
         </p>
-        <p>
-          <mark>Come to our first meeting</mark> next week & leave with your
-          first website online.
-        </p>
-        <form action="/signup" method="post">
+        <form
+          action="/submission"
+          onsubmit="return checkEmpty()"
+          method="post"
+          id="emailform"
+        >
           <label>
-            Get an SMS reminder
-            <input type="tel" name="tel" placeholder="765-555-5555" />
+            Enter email or phone number
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="765-555-5555"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              autofocus
+            />
           </label>
-          <button type="submit">
-            Sign up
-          </button>
+          <button type="submit">Submit</button>
         </form>
-        <p class="small">
-          Wed, August 21, room 2234 (Mr. Cullen) @ 3:30pm.
-          Snacks&nbsp;included!
-        </p>
       </div>
     </div>
-  </section>
-
-  <div id="winnerModal" class="winnerModal">
-    <div id="emojis"></div>
-    <div id="winnerModalContent" class="winnerModalContent">
-      <h1 id="winnerHeading">
-        Congratulations! You won<span id="prize"></span>!
-      </h1>
-      <p style="margin-top: 25px;">
-        We need to be able to contact you to give you your prize. Please enter
-        your email or phone number. (school email is okay if you feel uncomfortable
-        giving out other personal info—just make sure you check it!)
-      </p>
-      <form action="/submission" onsubmit="return checkEmpty()" method="post" id="emailform">
-        <label>
-          Enter email or phone number
-          <input type="text" name="email" id="email" placeholder="765-555-5555" autocomplete="off" autocorrect="off"
-            autocapitalize="off" spellcheck="false" autofocus />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </div>
-  <script src="/emojiRain.js"></script>
-</body>
-
+    <script src="/emojiRain.js"></script>
+  </body>
 </html>
