@@ -120,13 +120,6 @@ img:active {
   }
 }
 
-.hc {
-  padding: 1rem;
-  width: 100vw;
-  margin: 2rem -2rem 0;
-  background-color: #f9fafc;
-}
-
 .hc-inner {
   border-radius: 0.5rem;
   padding: 1rem;
