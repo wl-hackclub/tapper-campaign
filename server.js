@@ -73,14 +73,8 @@ io.on('connection', socket => {
     // console.log(store.get('globalCount'))
 
     switch (store.get('globalCount')) {
-      case 1000:
+      case 5000:
         socket.emit('winner', 'a 10,400mAh portable charger')
-        break
-      case 4000:
-        socket.emit('winner', 'a $25 Amazon gift card')
-        break
-      case 10000:
-        socket.emit('winner', 'a Google Home Mini')
         break
       default:
         break
