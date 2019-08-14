@@ -251,10 +251,36 @@ mark {
     margin-right: 1rem;
     min-width: 18rem;
   }
+  .hackclub {
+    display: none;
+  }
 }
 
 @media (min-width: 48em) {
   .hc {
     padding: 4rem;
+  }
+  .banner {
+    display: none;
+  }
+  .hackclub {
+    display: block;
+    background-image: linear-gradient(to right, rgb(228, 115, 45), 25%, rgb(228,45,66) 50%, rgb(228, 45, 158));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 12rem;
+    margin-top: 2rem;
+  }
+  .blob {
+    display: none;
+  }
+  .globalCount {
+    font-size: 3rem;
+  }
+  .localCount {
+    display: none;
+  }
+  .info {
+    display: none;
   }
 }
