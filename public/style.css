@@ -273,6 +273,7 @@ mark {
     display: block;
     color: white;
     font-size: 12rem;
+    margin-bottom: 3rem;
   }
   .blob {
     display: none;
@@ -290,7 +291,7 @@ mark {
   .url {
     font-size: 4rem;
     color: white;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
   .localCount {
     display: none;
